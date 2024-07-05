@@ -1,0 +1,1 @@
+# rn-yamap-new-example
