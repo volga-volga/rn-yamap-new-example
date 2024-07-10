@@ -1,0 +1,28 @@
+\ No newline at end of file
+diff --git a/android/src/main/java/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator.kt b/android/src/main/java/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator.kt
+index f77a24aabc4ac4e8b04bc8f91a837415c9c9b1ac..ee7db3962d8eab2a19f7a2b828ee76a76157f5f2 100644
+--- a/android/src/main/java/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator.kt
++++ b/android/src/main/java/com/swmansion/gesturehandler/core/GestureHandlerOrchestrator.kt
+@@ -616,17 +616,17 @@ class GestureHandlerOrchestrator(
+     private val inverseMatrix = Matrix()
+     private val tempCoords = FloatArray(2)
+     private val handlersComparator = Comparator<GestureHandler<*>?> { a, b ->
+-      return@Comparator if (a.isActive && b.isActive || a.isAwaiting && b.isAwaiting) {
++      return@Comparator if (a!!.isActive && b!!.isActive || a!!.isAwaiting && b!!.isAwaiting) {
+         // both A and B are either active or awaiting activation, in which case we prefer one that
+         // has activated (or turned into "awaiting" state) earlier
+         Integer.signum(b.activationIndex - a.activationIndex)
+-      } else if (a.isActive) {
++      } else if (a!!.isActive) {
+         -1 // only A is active
+-      } else if (b.isActive) {
++      } else if (b!!.isActive) {
+         1 // only B is active
+-      } else if (a.isAwaiting) {
++      } else if (a!!.isAwaiting) {
+         -1 // only A is awaiting, B is inactive
+-      } else if (b.isAwaiting) {
++      } else if (b!!.isAwaiting) {
+         1 // only B is awaiting, A is inactive
+       } else {
+         0 // both A and B are inactive, stable order matters

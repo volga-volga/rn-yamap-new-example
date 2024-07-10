@@ -2,6 +2,12 @@
 
 <img src="./demo/demo.gif" width=300/> 
 
+- Рекомендуемые настройки
+```
+yarn: ~3
+node: >=18
+cocoapods: 1.15.2
+```
 - Установите зависимости
 
 ```sh
@@ -10,7 +16,7 @@ cd ios
 pod install
 ```
 
-- Создайте файл api_keys.ts с ключами для карт
+- Создайте файл app/examples/api_keys.ts с ключами для карт
 
 ```ts
 export const MAP_KEY = 'КЛЮЧ ОТ КАРТ';

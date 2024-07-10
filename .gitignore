@@ -1,7 +1,6 @@
 # OSX
 #
 .DS_Store
-.yarn
 
 # Xcode
 #
@@ -67,3 +66,8 @@ yarn-error.log
 /coverage
 
 /app/examples/api_keys.ts
+
+# yarn
+.yarn/cache
+.yarn/releases
+.yarn/*.gz
