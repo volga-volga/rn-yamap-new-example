@@ -20,11 +20,11 @@ import {USER} from './images';
 import {useNavigation} from '@react-navigation/native';
 import {CLUSTERED_MAP} from '../navigation/routeNames.ts';
 import styles from './styles.ts';
-import {GEOCODER_KEY, MAP_KEY} from './api_keys.ts';
+import {MAP_KEY} from './api_keys.ts';
 import ButtonsBlock from './ButtonsBlock.tsx';
 
+YaMap.setLocale('ru_RU');
 YaMap.init(MAP_KEY);
-Geocoder.init(GEOCODER_KEY);
 
 const MapWithPrimitives = () => {
   const [marker, setMarker] = useState<Point>();
